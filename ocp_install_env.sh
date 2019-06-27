@@ -1,6 +1,6 @@
 eval "$(go env)"
 
-export OPENSHIFT_INSTALL_PATH="$GOPATH/src/github.com/openshift-metalkube/kni-installer"
+export OPENSHIFT_INSTALL_PATH="$GOPATH/src/github.com/dry923/kni-installer"
 export OPENSHIFT_INSTALL_DATA="$OPENSHIFT_INSTALL_PATH/data/data"
 export BASE_DOMAIN=${BASE_DOMAIN:-test.metalkube.org}
 export CLUSTER_NAME=${CLUSTER_NAME:-ostest}
@@ -37,7 +37,7 @@ function extract_installer() {
 function clone_installer() {
   # Clone repo, if not already present
   if [[ ! -d $OPENSHIFT_INSTALL_PATH ]]; then
-    sync_repo_and_patch go/src/github.com/openshift-metalkube/kni-installer https://github.com/openshift-metalkube/kni-installer.git
+    sync_repo_and_patch go/src/github.com/dry923/kni-installer https://github.com/dry923/kni-installer.git
   fi
 }
 

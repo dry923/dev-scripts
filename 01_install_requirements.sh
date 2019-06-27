@@ -42,7 +42,9 @@ sudo yum -y install \
 # We're reusing some tripleo pieces for this setup so clone them here
 cd
 if [ ! -d tripleo-repos ]; then
-  git clone https://git.openstack.org/openstack/tripleo-repos
+  # Replaced with the github page to keep changes in check
+  #git clone https://git.openstack.org/openstack/tripleo-repos
+  git clone https://github.com/dry923/tripleo-repos.git
 fi
 pushd tripleo-repos
 sudo python setup.py install
@@ -93,8 +95,10 @@ if which oc 2>&1 >/dev/null ; then
 fi
 if [ ! -f ${oc_tools_dir}/${oc_tools_local_file} ] || [ $oc_date -lt 1559308936 ]; then
   mkdir -p ${oc_tools_dir}
+  # We add a copy of the oc_tools file to the git repo so we can keep the version in check
+  cp ${oc_tools_local_file} ${oc_tools_dir}/${oc_tools_local_file}
   cd ${oc_tools_dir}
-  wget https://mirror.openshift.com/pub/openshift-v4/clients/oc/${oc_version}/linux/oc.tar.gz -O ${oc_tools_local_file}
+  # wget https://mirror.openshift.com/pub/openshift-v4/clients/oc/${oc_version}/linux/oc.tar.gz -O ${oc_tools_local_file}
   tar xvzf ${oc_tools_local_file}
   sudo cp oc /usr/local/bin/
 fi

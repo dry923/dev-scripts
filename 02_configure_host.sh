@@ -34,7 +34,7 @@ if [ ! -z "${VM_NODES_FILE}" ]; then
 fi
 
 export REPO_PATH=${WORKING_DIR}
-sync_repo_and_patch metal3-dev-env https://github.com/metal3-io/metal3-dev-env.git
+sync_repo_and_patch metal3-dev-env https://github.com/dry923/metal3-dev-env.git
 VM_SETUP_PATH="${REPO_PATH}/metal3-dev-env/vm-setup"
 
 ANSIBLE_FORCE_COLOR=true ansible-playbook \
