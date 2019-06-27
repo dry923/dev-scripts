@@ -96,7 +96,7 @@ fi
 if [ ! -f ${oc_tools_dir}/${oc_tools_local_file} ] || [ $oc_date -lt 1559308936 ]; then
   mkdir -p ${oc_tools_dir}
   # We add a copy of the oc_tools file to the git repo so we can keep the version in check
-  cp ${oc_tools_local_file} ${oc_tools_dir}/${oc_tools_local_file}
+  cp $HOME/dev-scripts/${oc_tools_local_file} ${oc_tools_dir}/
   cd ${oc_tools_dir}
   # wget https://mirror.openshift.com/pub/openshift-v4/clients/oc/${oc_version}/linux/oc.tar.gz -O ${oc_tools_local_file}
   tar xvzf ${oc_tools_local_file}
