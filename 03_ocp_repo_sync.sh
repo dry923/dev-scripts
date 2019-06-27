@@ -30,7 +30,7 @@ sync_repo_and_patch github.com/dry923/operator-sdk https://github.com/dry923/ope
 
 # Build operator-sdk
 pushd "${GOPATH}/src/github.com/dry923/operator-sdk"
-git checkout master
+#git checkout master
 make dep
 make install
 popd
